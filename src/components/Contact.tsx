@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 export function Contact() {
@@ -30,7 +30,7 @@ export function Contact() {
               
               <div className="flex flex-col sm:flex-row gap-4 pt-8 items-start sm:items-center">
                 <a 
-                  href="mailto:hello@example.com"
+                  href="mailto:rahulbiradar7134@gmail.com"
                   className="px-6 py-3 bg-foreground text-background rounded-full text-sm font-medium shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2"
                 >
                   Send an Email
@@ -39,9 +39,8 @@ export function Contact() {
 
                 <div className="flex gap-4 sm:ml-4">
                   {[
-                    { icon: <FaGithub size={20} className="text-foreground" />, href: "#" },
-                    { icon: <FaLinkedin size={20} className="text-foreground" />, href: "#" },
-                    { icon: <FaTwitter size={20} className="text-foreground" />, href: "#" }
+                    { icon: <FaGithub size={20} className="text-foreground" />, href: "https://github.com/Rahulbiradar9" },
+                    { icon: <FaLinkedin size={20} className="text-foreground" />, href: "https://www.linkedin.com/in/rahul-biradar-05b68b263/" }
                   ].map((social, i) => (
                     <Link key={i} href={social.href}>
                       <motion.div
