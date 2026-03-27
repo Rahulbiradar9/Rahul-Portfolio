@@ -27,12 +27,12 @@ export function Hero() {
 
       <div className="container mx-auto max-w-6xl relative z-10 w-full">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-24">
-          
+
           {/* Left Column: Text Content */}
-          <motion.div 
-            variants={containerVariants} 
-            initial="hidden" 
-            animate="visible" 
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
             className="flex-1 space-y-8 text-center md:text-left w-full"
           >
             <motion.div variants={itemVariants} className="inline-block">
@@ -40,14 +40,14 @@ export function Hero() {
                 Software Engineer
               </span>
             </motion.div>
-            
-            <motion.h1 
-              variants={itemVariants} 
+
+            <motion.h1
+              variants={itemVariants}
               className="text-5xl md:text-7xl font-semibold tracking-tight text-foreground"
             >
               Hi, I'm Rahul.
             </motion.h1>
-            
+
             <motion.p variants={itemVariants} className="text-xl md:text-2xl text-foreground font-light tracking-wide max-w-2xl mx-auto md:mx-0">
               Building robust web applications and <span className="font-medium text-foreground">digital products</span>.
             </motion.p>
@@ -67,7 +67,7 @@ export function Hero() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </motion.div>
               </Link>
-              
+
               <Link href="#contact">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -90,9 +90,9 @@ export function Hero() {
           >
             <div className="relative w-56 h-56 md:w-80 md:h-80 group rounded-full overflow-hidden border border-black/5 dark:border-white/10 shadow-[var(--shadow-apple)] bg-muted/50 flex items-center justify-center">
               {/* Photo Image Tag */}
-              <img 
-                src="/profile.png" 
-                alt="Profile photo of Rahul" 
+              <img
+                src="/profile.png"
+                alt="Profile photo of Rahul"
                 className="w-full h-full object-cover text-transparent"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
