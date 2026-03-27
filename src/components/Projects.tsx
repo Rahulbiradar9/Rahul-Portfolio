@@ -6,32 +6,41 @@ import Link from "next/link";
 
 const projects = [
   {
-    id: "ecospace",
-    title: "EcoSpace Connect",
-    description: "A platform for sustainable building materials. Built with a responsive Next.js frontend and Trpc for type-safe API communication.",
-    tech: ["Next.js", "Trpc", "Tailwind CSS", "Prisma"],
+    id: "game-dev-ai",
+    title: "Game Development Using AI",
+    description: "Developed a souls-like action game (Elden Ring–inspired) in Unreal Engine 5. Implemented core combat mechanics, integrated ConvAI for AI-driven NPC interactions, and utilized Text-to-speech for deep immersion.",
+    tech: ["Unreal Engine 5", "Blender", "ConvAI"],
     github: "#",
     live: "#",
-    category: "Full Stack",
+    category: "Game Design",
   },
   {
-    id: "neuroflow",
-    title: "Neuroflow Analytics",
-    description: "A data analytics dashboard for healthcare providers. Processes JSON records and provides statistical summaries using a Python backend.",
-    tech: ["Python", "FastAPI", "React", "Docker", "PostgreSQL"],
+    id: "ai-arbitrator",
+    title: "AI-Arbitrator",
+    description: "Hybrid AI + Blockchain framework for freelancer platforms automating dispute resolution using decentralized consensus. Models hit 96%+ accuracy utilizing NLP for resume summarization and job role prediction.",
+    tech: ["TensorFlow", "YOLOv8", "PyPDF2", "Solidity"],
     github: "#",
     live: "#",
-    category: "Data Science",
+    category: "AI & Web3",
   },
   {
-    id: "aura",
-    title: "Aura UI Library",
-    description: "An open-source React component library focused on accessibility and modern design. Features smooth framer-motion animations.",
-    tech: ["React", "TypeScript", "Framer Motion", "Tailwind"],
+    id: "womens-health",
+    title: "AI Women's Health & Wellness",
+    description: "Holistic platform with modules for meditation, yoga, and nutrition improving user engagement by 45%. Built 'Vital Buddy', a conversational AI assistant for health screening and stress-level tracking.",
+    tech: ["Python", "TensorFlow", "Google Maps", "Firebase"],
     github: "#",
     live: "#",
-    category: "Open Source",
+    category: "Healthcare AI",
   },
+  {
+    id: "did-ethereum",
+    title: "DID Management System (Hackathon Winner)",
+    description: "Secured 3rd Place at IIITS Web3SSH Hackathon. Built a decentralized identity management system on Ethereum using IPFS for off-chain data storage and smart contracts for validation.",
+    tech: ["Ethereum", "IPFS", "Hardhat", "Ethers.js"],
+    github: "#",
+    live: "#",
+    category: "Web3 Infrastructure",
+  }
 ];
 
 export function Projects() {

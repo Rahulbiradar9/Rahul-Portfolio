@@ -1,34 +1,58 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import { GraduationCap, BriefcaseBusiness } from "lucide-react";
+import { GraduationCap, BriefcaseBusiness, Building2 } from "lucide-react";
 import { useRef } from "react";
 
 const workData = [
   {
-    title: "Software Engineer",
-    organization: "Tech Solutions Inc.",
-    date: "2023 - Present",
-    description: "Developing and maintaining full-stack web applications. Focus on improving performance and writing clean, testable code.",
+    title: "Intern",
+    organization: "HCI Lab IIITS",
+    date: "Feb 2026 - Present",
+    description: "Engaged in research and development projects at the intersection of human behavior, design, and technology. Collaborating on innovative HCI initiatives to enhance user experience.",
+    image: "/iiits.png"
   },
   {
-    title: "Frontend Developer",
-    organization: "Creative Agency",
-    date: "2021 - 2023",
-    description: "Built responsive client websites and internal marketing dashboards using React.js and Tailwind CSS.",
+    title: "Intern",
+    organization: "Rooman Technologies",
+    date: "Feb 2026 - Present",
+    description: "Participating in advanced technical training and development workflows utilizing Python and MATLAB methodologies.",
+    image: "/rooman.png"
   },
+  {
+    title: "AICTE & Salesforce Intern",
+    organization: "1M1B (1 Million for 1 Billion)",
+    date: "May 2025 - Aug 2025",
+    description: "Conducted applied AI research developing collaborative solutions for UN Sustainable Development Goals (SDGs). Designed, tested, and refined AI-driven prototypes.",
+    image: "/1m1b.png"
+  }
 ];
 
 const educationData = [
   {
-    title: "B.S. Computer Science",
-    organization: "State University",
-    date: "2017 - 2021",
-    description: "Studied core computing principles, algorithms, and software engineering practices.",
+    title: "Bachelor of Engineering, Computer Science",
+    organization: "Visvesvaraya Technological University (VTU)",
+    date: "Dec 2022 - Dec 2026",
+    description: "CGPA: 7.81. Focusing on core software engineering principles, algorithms, and computing systems.",
+    image: "/vtu.png"
   },
+  {
+    title: "Higher Education",
+    organization: "Tungal Schools",
+    date: "May 2020 - May 2022",
+    description: "Higher Education Administration & Pre-University Studies.",
+    image: "/tungal.png"
+  },
+  {
+    title: "Primary & Secondary Education",
+    organization: "Kendriya Vidyalaya",
+    date: "Apr 2010 - Mar 2020",
+    description: "Graduated with strong foundations in science and mathematics.",
+    image: "/kv.png"
+  }
 ];
 
-function TimelineSection({ title, data, Icon }: { title: string, data: any[], Icon: any }) {
+function TimelineSection({ title, data, fallbackIcon: Icon }: { title: string, data: any[], fallbackIcon: any }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -68,10 +92,20 @@ function TimelineSection({ title, data, Icon }: { title: string, data: any[], Ic
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
           >
+            {/* Added Image Slot per user request */}
             <div
-              className="flex items-center justify-center w-12 h-12 rounded-full border border-black/10 dark:border-white/10 bg-background shadow-sm shrink-0 z-10 md:absolute md:-translate-x-1/2 md:left-1/2"
+              className="flex items-center justify-center w-12 h-12 rounded-full border border-black/10 dark:border-white/10 bg-white shadow-sm shrink-0 z-10 md:absolute md:-translate-x-1/2 md:left-1/2 overflow-hidden"
             >
-              <Icon className="w-5 h-5 text-foreground opacity-80" />
+              <img 
+                src={item.image} 
+                alt={item.organization}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <Icon className="w-5 h-5 text-black opacity-60 hidden" />
             </div>
 
             <motion.div
@@ -111,8 +145,8 @@ export function Experience() {
           </motion.h2>
         </div>
 
-        <TimelineSection title="Work Experience" data={workData} Icon={BriefcaseBusiness} />
-        <TimelineSection title="Education" data={educationData} Icon={GraduationCap} />
+        <TimelineSection title="Work Experience" data={workData} fallbackIcon={Building2} />
+        <TimelineSection title="Education" data={educationData} fallbackIcon={GraduationCap} />
         
       </div>
     </section>

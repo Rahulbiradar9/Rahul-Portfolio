@@ -41,6 +41,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# linting & cache
+.eslintcache
+.turbo/
+
 # IDEs and Editors
 .idea/
 .vscode/

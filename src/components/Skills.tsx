@@ -4,20 +4,16 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
   {
-    title: "Machine Learning",
-    skills: ["PyTorch", "TensorFlow", "Scikit-Learn", "NLP", "Computer Vision"],
+    title: "Languages",
+    skills: ["C++", "Python", "SQL", "HTML", "CSS"],
   },
   {
-    title: "Frontend Development",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    title: "Libraries & ML Frameworks",
+    skills: ["TensorFlow", "Scikit", "Pandas", "NumPy", "OpenCV", "Transformers", "Streamlit", "Flask"],
   },
   {
-    title: "Backend Development",
-    skills: ["Node.js", "Python", "Go", "PostgreSQL", "Redis"],
-  },
-  {
-    title: "Tools & Infrastructure",
-    skills: ["Git", "Docker", "AWS", "Vercel", "Linux"],
+    title: "Tools & Platforms",
+    skills: ["Jupyter", "Git", "Google Cloud (GCP)", "Google Colab", "Hugging Face Hub"],
   }
 ];
 
@@ -34,7 +30,7 @@ export function Skills() {
         >
           <div className="md:col-span-4 lg:col-span-3">
             <h2 className="text-xl md:text-2xl font-medium text-foreground tracking-tight sticky top-24">
-              Skills
+              Technical Skills
             </h2>
           </div>
 
