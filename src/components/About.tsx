@@ -1,35 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
 
 export function About() {
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-24 relative bg-background">
       <div className="container mx-auto px-6 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center text-center space-y-8"
+          className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/5 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-md shadow-[var(--shadow-float)] dark:shadow-[var(--shadow-float-dark)]">
-            <User className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm font-medium tracking-wide">About Me</span>
+          <div className="md:col-span-4 lg:col-span-3">
+            <h2 className="text-xl md:text-2xl font-medium text-foreground tracking-tight sticky top-24">
+              About
+            </h2>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-            Crafting Digital <br className="hidden md:block" /> Experiences
-          </h2>
-
-          <div className="relative p-8 md:p-12 mt-12 w-full rounded-3xl bg-card border border-black/5 dark:border-white/10 shadow-[var(--shadow-float)] dark:shadow-[var(--shadow-float-dark)] text-left hover:shadow-[var(--shadow-float-hover)] dark:hover:shadow-[var(--shadow-float-hover-dark)] transition-shadow duration-500">
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              I'm a passionate software engineer focused on building clean, modern, and highly interactive web experiences. 
-              My approach blends technical precision with a strong eye for design, ensuring that every project not only functions flawlessly but feels incredibly intuitive and responsive to the user.
+          <div className="md:col-span-8 lg:col-span-9 space-y-8 text-left">
+            <p className="text-2xl md:text-3xl lg:text-4xl leading-relaxed text-foreground font-light tracking-tight">
+              I am a software engineer focused on building high-quality, scalable web applications. My work spans across the full stack, from <span className="font-medium text-foreground">responsive front-end interfaces</span> to <span className="font-medium text-foreground">robust back-end systems</span>.
             </p>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mt-4">
-              With a background in both frontend and backend technologies, I bridge the gap between aesthetics and performance—creating resilient architectures under the hood while maintaining pixel-perfect, completely frictionless user interfaces on the surface.
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground font-light">
+              I believe in writing clean, maintainable code and building products that solve real problems. Whether I'm working on complex data integrations or intuitive user journeys, I focus on delivering practical, performant solutions that provide immediate value to users.
             </p>
           </div>
         </motion.div>

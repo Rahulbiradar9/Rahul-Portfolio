@@ -1,79 +1,101 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { GraduationCap, BriefcaseBusiness } from "lucide-react";
+import { useRef } from "react";
 
 const experienceData = [
   {
     type: "work",
-    title: "Software Engineer Intern",
-    organization: "Tech Innovators Inc.",
-    date: "Summer 2025",
-    description: "Engineered high-performance microservices, reducing data retrieval latency by 40%. Implemented responsive and accessible UI components utilized across 3 core product offerings.",
+    title: "Software Engineer",
+    organization: "Tech Solutions Inc.",
+    date: "2023 - Present",
+    description: "Developing and maintaining full-stack web applications. Focus on improving performance and writing clean, testable code.",
   },
   {
     type: "work",
-    title: "Frontend Developer Contract",
-    organization: "Creative Studio",
-    date: "Jan 2024 - Dec 2024",
-    description: "Designed and developed immersive landing pages resulting in a 25% increase in user engagement. Championed a migration to Tailwind CSS saving hours of developer resources.",
+    title: "Frontend Developer",
+    organization: "Creative Agency",
+    date: "2021 - 2023",
+    description: "Built responsive client websites and internal marketing dashboards using React.js and Tailwind CSS.",
   },
   {
     type: "education",
     title: "B.S. Computer Science",
-    organization: "University of Technology",
-    date: "2022 - 2026",
-    description: "Focusing on Software Engineering, Data Structures, and Human-Computer Interaction. Lead Developer of the university Hackathon club.",
+    organization: "State University",
+    date: "2017 - 2021",
+    description: "Studied core computing principles, algorithms, and software engineering practices.",
   },
 ];
 
 export function Experience() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"],
+  });
+
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
-    <section id="experience" className="py-24 relative">
-      <div className="container mx-auto px-6 max-w-3xl">
-        <div className="text-center mb-16 space-y-4">
-          <motion.div
+    <section id="experience" className="py-24 relative bg-background">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <div className="mb-24 space-y-4">
+          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/5 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-md shadow-[var(--shadow-float)] dark:shadow-[var(--shadow-float-dark)]"
+            className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground text-center"
           >
-            <BriefcaseBusiness className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm font-medium tracking-wide">Experience & Education</span>
-          </motion.div>
+            Experience & Education
+          </motion.h2>
         </div>
 
-        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/20 before:to-transparent">
+        <div ref={containerRef} className="space-y-12 relative">
+          <motion.div
+            className="absolute top-0 bottom-0 left-[23px] md:left-1/2 w-[2px] bg-black/10 dark:bg-white/10 origin-top rounded-full"
+            style={{ scaleY }}
+          />
+
           {experienceData.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
             >
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/5 bg-card shadow-[var(--shadow-float)] dark:shadow-[var(--shadow-float-dark)] shrink-0 z-10 md:absolute md:-translate-x-1/2 md:left-1/2">
+              <div 
+                className="flex items-center justify-center w-12 h-12 rounded-full border border-black/10 dark:border-white/10 bg-background shadow-sm shrink-0 z-10 md:absolute md:-translate-x-1/2 md:left-1/2"
+              >
                 {item.type === "work" ? (
-                  <BriefcaseBusiness className="w-4 h-4 text-foreground" />
+                  <BriefcaseBusiness className="w-5 h-5 text-foreground opacity-80" />
                 ) : (
-                  <GraduationCap className="w-4 h-4 text-foreground" />
+                  <GraduationCap className="w-5 h-5 text-foreground opacity-80" />
                 )}
               </div>
               
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-3xl bg-card border border-black/5 dark:border-white/10 shadow-[var(--shadow-float)] dark:shadow-[var(--shadow-float-dark)] hover:-translate-y-1 hover:shadow-[var(--shadow-float-hover)] dark:hover:shadow-[var(--shadow-float-hover-dark)] transition-all duration-300">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                  <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
-                  <span className="text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">
+              <motion.div
+                whileHover={{ scale: 1.02, boxShadow: "var(--shadow-apple-hover)" }}
+                className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-8 rounded-3xl bg-card border border-black/5 dark:border-white/10 shadow-[var(--shadow-apple)] transition-all duration-300"
+              >
+                <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-2">
+                  <h3 className="text-xl font-semibold text-foreground tracking-tight">{item.title}</h3>
+                  <span className="text-xs font-semibold text-muted-foreground bg-muted px-3 py-1 rounded-full w-fit mt-2 xl:mt-0">
                     {item.date}
                   </span>
                 </div>
-                <h4 className="font-medium text-muted-foreground mb-4">{item.organization}</h4>
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <h4 className="text-sm font-medium text-foreground opacity-80 mb-4">{item.organization}</h4>
+                <p className="text-muted-foreground leading-relaxed text-sm font-light border-t border-black/5 dark:border-white/5 pt-4">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

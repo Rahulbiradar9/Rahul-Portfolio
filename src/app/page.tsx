@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -6,10 +8,16 @@ import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground relative selection:bg-foreground selection:text-background">
+    <motion.main 
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="min-h-screen bg-background text-foreground"
+    >
       <Navbar />
       <Hero />
       <About />
@@ -18,6 +26,6 @@ export default function Home() {
       <Experience />
       <Contact />
       <Footer />
-    </main>
+    </motion.main>
   );
 }
