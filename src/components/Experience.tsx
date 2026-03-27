@@ -29,7 +29,7 @@ const experienceData = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 relative bg-muted/30">
+    <section id="experience" className="py-24 relative">
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="text-center mb-16 space-y-4">
           <motion.div

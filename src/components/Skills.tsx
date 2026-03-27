@@ -38,7 +38,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 relative bg-muted/30">
+    <section id="skills" className="py-24 relative">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-16">
           <motion.div
