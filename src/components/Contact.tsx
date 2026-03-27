@@ -28,62 +28,32 @@ export function Contact() {
                 I'm always open to new opportunities and collaborations. If you have a question or just want to say hi, I will try my best to get back to you!
               </p>
               
-              <div className="flex gap-4 pt-8">
-                {[
-                  { icon: <FaGithub size={20} className="text-foreground" />, href: "#" },
-                  { icon: <FaLinkedin size={20} className="text-foreground" />, href: "#" },
-                  { icon: <FaTwitter size={20} className="text-foreground" />, href: "#" }
-                ].map((social, i) => (
-                  <Link key={i} href={social.href}>
-                    <motion.div
-                      whileHover={{ y: -2 }}
-                      className="p-3 rounded-full bg-muted border border-black/5 dark:border-white/5 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-                    >
-                      {social.icon}
-                    </motion.div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-12">
-              <form className="max-w-2xl space-y-10" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                  <div className="relative group">
-                    <input
-                      id="name"
-                      type="text"
-                      placeholder="Name"
-                      className="w-full pb-3 bg-transparent border-b border-black/10 dark:border-white/10 focus:outline-none focus:border-foreground transition-all text-foreground placeholder:text-muted-foreground/50 text-base"
-                    />
-                  </div>
-                  <div className="relative group">
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="Email"
-                      className="w-full pb-3 bg-transparent border-b border-black/10 dark:border-white/10 focus:outline-none focus:border-foreground transition-all text-foreground placeholder:text-muted-foreground/50 text-base"
-                    />
-                  </div>
-                </div>
-                <div className="relative group">
-                  <textarea
-                    id="message"
-                    rows={4}
-                    placeholder="Message"
-                    className="w-full pb-3 bg-transparent border-b border-black/10 dark:border-white/10 focus:outline-none focus:border-foreground transition-all text-foreground placeholder:text-muted-foreground/50 text-base resize-none"
-                  ></textarea>
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="px-8 py-4 bg-foreground text-background rounded-full font-medium shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2"
+              <div className="flex flex-col sm:flex-row gap-4 pt-8 items-start sm:items-center">
+                <a 
+                  href="mailto:hello@example.com"
+                  className="px-6 py-3 bg-foreground text-background rounded-full text-sm font-medium shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2"
                 >
-                  Send Message
+                  Send an Email
                   <Send className="w-4 h-4" />
-                </motion.button>
-              </form>
+                </a>
+
+                <div className="flex gap-4 sm:ml-4">
+                  {[
+                    { icon: <FaGithub size={20} className="text-foreground" />, href: "#" },
+                    { icon: <FaLinkedin size={20} className="text-foreground" />, href: "#" },
+                    { icon: <FaTwitter size={20} className="text-foreground" />, href: "#" }
+                  ].map((social, i) => (
+                    <Link key={i} href={social.href}>
+                      <motion.div
+                        whileHover={{ y: -2 }}
+                        className="p-3 rounded-full bg-muted border border-black/5 dark:border-white/5 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                      >
+                        {social.icon}
+                      </motion.div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
             
           </div>
