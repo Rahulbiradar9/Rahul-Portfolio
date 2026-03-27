@@ -79,7 +79,7 @@ function TimelineSection({ title, data, fallbackIcon: Icon }: { title: string, d
 
       <div ref={containerRef} className="space-y-12 relative max-w-4xl mx-auto">
         <motion.div
-          className="absolute top-0 bottom-0 left-[23px] md:left-1/2 w-[2px] bg-black/10 dark:bg-white/10 origin-top rounded-full"
+          className="absolute top-0 bottom-0 left-[31px] md:left-1/2 w-[2px] bg-black/10 dark:bg-white/10 origin-top rounded-full"
           style={{ scaleY }}
         />
 
@@ -94,7 +94,7 @@ function TimelineSection({ title, data, fallbackIcon: Icon }: { title: string, d
           >
             {/* Added Image Slot per user request */}
             <div
-              className="flex items-center justify-center w-12 h-12 rounded-full border border-black/10 dark:border-white/10 bg-white shadow-sm shrink-0 z-10 md:absolute md:-translate-x-1/2 md:left-1/2 overflow-hidden"
+              className="flex items-center justify-center w-16 h-16 rounded-full border border-black/10 dark:border-white/10 bg-white shadow-sm shrink-0 z-10 md:absolute md:-translate-x-1/2 md:left-1/2 overflow-hidden"
             >
               <img 
                 src={item.image} 
@@ -105,12 +105,12 @@ function TimelineSection({ title, data, fallbackIcon: Icon }: { title: string, d
                   e.currentTarget.nextElementSibling?.classList.remove('hidden');
                 }}
               />
-              <Icon className="w-5 h-5 text-black opacity-60 hidden" />
+              <Icon className="w-6 h-6 text-black opacity-60 hidden" />
             </div>
 
             <motion.div
               whileHover={{ scale: 1.02, boxShadow: "var(--shadow-apple-hover)" }}
-              className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-8 rounded-3xl bg-card border border-black/5 dark:border-white/10 shadow-[var(--shadow-apple)] transition-all duration-300"
+              className="w-[calc(100%-5rem)] md:w-[calc(50%-4rem)] p-8 rounded-3xl bg-card border border-black/5 dark:border-white/10 shadow-[var(--shadow-apple)] transition-all duration-300"
             >
               <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-2">
                 <h4 className="text-xl font-semibold text-foreground tracking-tight">{item.title}</h4>
