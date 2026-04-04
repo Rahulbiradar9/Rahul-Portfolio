@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import { Code2, LayoutTemplate, Server, Database, BrainCircuit, Wrench } from "lucide-react";
 import { 
-  SiCplusplus, SiPython, SiJavascript, SiTypescript, 
-  SiReact, SiNextdotjs, SiTailwindcss, SiFramer, SiHtml5, SiStreamlit,
-  SiNodedotjs, SiExpress, SiFlask, SiFastapi,
-  SiPostgresql, SiMysql, SiMongodb, SiRedis, SiPrisma,
+  SiC, SiCplusplus, SiPython, 
+  SiReact, SiTailwindcss, SiHtml5, SiCss,
+  SiNodedotjs, SiFastapi,
+  SiPostgresql, SiMongodb,
   SiTensorflow, SiPytorch, SiScikitlearn, SiPandas, SiNumpy, SiOpencv,
-  SiGit, SiDocker, SiGooglecloud, SiJupyter, SiLinux
+  SiGit, SiGithub, SiJupyter, SiLinux
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { FaDatabase } from "react-icons/fa";
@@ -20,21 +20,17 @@ const skillCategories = [
     skills: [
       { name: "C++", icon: SiCplusplus },
       { name: "Python", icon: SiPython },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "SQL", icon: FaDatabase },
+      { name: "C", icon: SiC },
     ],
   },
   {
     title: "Frontend Development",
     icon: LayoutTemplate,
     skills: [
+      { name: "HTML", icon: SiHtml5 },
+      { name: "CSS", icon: SiCss },
       { name: "React", icon: SiReact },
-      { name: "Next.js", icon: SiNextdotjs },
       { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "Framer Motion", icon: SiFramer },
-      { name: "HTML/CSS", icon: SiHtml5 },
-      { name: "Streamlit", icon: SiStreamlit },
     ],
   },
   {
@@ -42,8 +38,6 @@ const skillCategories = [
     icon: Server,
     skills: [
       { name: "Node.js", icon: SiNodedotjs },
-      { name: "Express", icon: SiExpress },
-      { name: "Flask", icon: SiFlask },
       { name: "FastAPI", icon: SiFastapi },
       { name: "RESTful APIs", icon: TbApi },
     ],
@@ -53,18 +47,15 @@ const skillCategories = [
     icon: Database,
     skills: [
       { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "MySQL", icon: SiMysql },
       { name: "MongoDB", icon: SiMongodb },
-      { name: "Redis", icon: SiRedis },
-      { name: "Prisma", icon: SiPrisma },
     ],
   },
   {
     title: "AI & Machine Learning",
     icon: BrainCircuit,
     skills: [
-      { name: "TensorFlow", icon: SiTensorflow },
       { name: "PyTorch", icon: SiPytorch },
+      { name: "TensorFlow", icon: SiTensorflow },
       { name: "Scikit-Learn", icon: SiScikitlearn },
       { name: "Pandas", icon: SiPandas },
       { name: "NumPy", icon: SiNumpy },
@@ -76,8 +67,7 @@ const skillCategories = [
     icon: Wrench,
     skills: [
       { name: "Git", icon: SiGit },
-      { name: "Docker", icon: SiDocker },
-      { name: "Google Cloud (GCP)", icon: SiGooglecloud },
+      { name: "GitHub", icon: SiGithub },
       { name: "Jupyter", icon: SiJupyter },
       { name: "Linux", icon: SiLinux },
     ],
