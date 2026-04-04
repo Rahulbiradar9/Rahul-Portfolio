@@ -119,10 +119,10 @@ export function Skills() {
                     return (
                       <div
                         key={skill.name}
-                        className="flex items-center gap-3 px-5 py-3 text-base font-medium text-foreground/90 bg-secondary/10 dark:bg-card rounded-2xl border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10 hover:-translate-y-1 transition-all shadow-sm hover:shadow-md cursor-default group"
+                        className="flex items-center gap-3.5 px-6 py-4 text-lg font-semibold text-foreground/90 bg-secondary/10 dark:bg-card rounded-2xl border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10 hover:-translate-y-1 transition-all shadow-sm hover:shadow-md cursor-default group"
                       >
                         <SkillIcon 
-                          className="w-6 h-6 opacity-90 transition-transform group-hover:scale-110" 
+                          className="w-7 h-7 opacity-90 transition-transform group-hover:scale-110" 
                           style={{ color: skill.color || "currentColor" }}
                         />
                         <span>{skill.name}</span>
