@@ -49,11 +49,11 @@ export function Hero() {
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-xl md:text-2xl text-foreground font-light tracking-wide max-w-2xl mx-auto md:mx-0">
-              Building robust web applications and <span className="font-medium text-foreground">digital products</span>.
+              Building robust System architectures and <span className="font-medium text-foreground">digital products</span>.
             </motion.p>
 
             <motion.p variants={itemVariants} className="max-w-xl mx-auto md:mx-0 text-muted-foreground leading-relaxed">
-              I am a full-stack developer specializing in creating high-performance, scalable web applications with a strong focus on clean code and exceptional user experiences.
+              I am a Software Engineer & Researcher specializing in creating high-performance, scalable neural network with a strong focus on optimizing architectures and training strategies.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">

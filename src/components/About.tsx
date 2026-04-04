@@ -21,10 +21,10 @@ export function About() {
 
           <div className="md:col-span-8 lg:col-span-9 space-y-8 text-left">
             <p className="text-2xl md:text-3xl lg:text-4xl leading-relaxed text-foreground font-light tracking-tight">
-              I am a software engineer focused on building high-quality, scalable web applications. My work spans across the full stack, from <span className="font-medium text-foreground">responsive front-end interfaces</span> to <span className="font-medium text-foreground">robust back-end systems</span>.
+              I am a software engineer focused on building high-quality, scalable neural network Models. My work spans across Model building, from <span className="font-medium text-foreground">end-to-end Deployment Pipelines</span> to <span className="font-medium text-foreground">Robust Model Serving</span>.
             </p>
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground font-light">
-              I believe in writing clean, maintainable code and building products that solve real problems. Whether I'm working on complex data integrations or intuitive user journeys, I focus on delivering practical, performant solutions that provide immediate value to users.
+              I am writing clean, maintainable code and building products that solve problems.
             </p>
           </div>
         </motion.div>
